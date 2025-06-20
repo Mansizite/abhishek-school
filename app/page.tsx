@@ -50,7 +50,7 @@ export default function Home() {
       <Chatbot />
 
       {/* Hero Section with Background Image */}
-      <section
+      {/* <section
         className="relative w-full min-h-[80vh] bg-cover bg-center flex items-center"
         style={{
           backgroundImage:
@@ -94,7 +94,48 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+      <section
+  className="relative w-full min-h-[80vh] bg-cover bg-center flex items-center"
+  style={{
+    backgroundImage:
+      'url("https://img.freepik.com/free-vector/realistic-ice-skating-background_23-2150974035.jpg")',
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }}
+>
+  <div className="absolute inset-0 bg-black/50"></div>
+
+  <div className="container mx-auto px-4 relative z-10">
+    <div className="grid md:grid-cols-2 gap-6 items-center text-white">
+      <motion.div
+        initial={{ x: -50, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg">
+          Welcome to Abhishek International School
+        </h1>
+        <p className="text-xl md:text-2xl mb-8 max-w-2xl drop-shadow-md">
+          Nurturing young minds to become future leaders through quality education and holistic development.
+        </p>
+        <div className="flex flex-wrap gap-4">
+          <Button asChild size="lg" className="bg-indigo-600 hover:bg-indigo-700">
+            <Link href="/admission">Apply Now</Link>
+          </Button>
+          <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/20">
+            <Link href="/about">Learn More</Link>
+          </Button>
+        </div>
+      </motion.div>
+
+      <div className="md:ml-auto">
+        <EnquiryForm />
+      </div>
+    </div>
+  </div>
+</section>
+
 
       <WelcomeSection />
 
