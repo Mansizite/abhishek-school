@@ -1,3 +1,4 @@
+
 "use client"
 
 import { WelcomeSection } from "@/components/welcome-section"
@@ -45,47 +46,52 @@ const features = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col font-serif">
       <SocialSidebar />
       <Chatbot />
 
-      {/* Hero Section with Background Image */}
-      {/* <section
-        className="relative w-full min-h-[80vh] bg-cover bg-center flex items-center"
-        style={{
-          backgroundImage:
-            'url("https://img.freepik.com/free-vector/realistic-ice-skating-background_23-2150974035.jpg?t=st=1743822441~exp=1743826041~hmac=275e54cb28bd6f0fd5bfbcdb2dcc59efb150c9a53a19487c37e7748f71b3db54&w=1380")',
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/40"></div>
+      {/* Hero Section with Video */}
+      <section className="relative w-full min-h-[80vh] flex items-center overflow-hidden">
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          src="bg.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+        <div className="absolute inset-0 bg-black/60"></div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid md:grid-cols-2 gap-6 items-center">
+          <div className="grid md:grid-cols-2 gap-6 items-center text-white">
             <motion.div
               initial={{ x: -50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8 }}
-              className="text-white"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg">
+              <h1 className="text-4xl md:text-3xl lg:text-4xl mb-4 drop-shadow-lg">
                 Welcome to Abhishek International School
               </h1>
               <p className="text-xl md:text-2xl mb-8 max-w-2xl drop-shadow-md">
                 Nurturing young minds to become future leaders through quality education and holistic development.
               </p>
               <div className="flex flex-wrap gap-4">
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button asChild size="lg" className="bg-sky-600 hover:bg-sky-700">
-                    <Link href="/admission">Apply Now</Link>
-                  </Button>
-                </motion.div>
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/20">
-                    <Link href="/about">Learn More</Link>
-                  </Button>
-                </motion.div>
+                <Button
+                  asChild
+                  size="lg"
+                  className="text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-[#6a1b9a] via-[#8e24aa] to-[#ab47bc]"
+                >
+                  <Link href="/admission">Apply Now</Link>
+                </Button>
+
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="border-[#8e24aa] text-[#8e24aa] hover:bg-[#f3e5f5] px-6 py-3 rounded-lg transition-all duration-300"
+                >
+                  <Link href="/about">Learn More</Link>
+                </Button>
               </div>
             </motion.div>
 
@@ -94,78 +100,106 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section> */}
-      <section
-  className="relative w-full min-h-[80vh] bg-cover bg-center flex items-center"
-  style={{
-    backgroundImage:
-      'url("https://img.freepik.com/free-vector/realistic-ice-skating-background_23-2150974035.jpg")',
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  }}
->
-  <div className="absolute inset-0 bg-black/50"></div>
-
-  <div className="container mx-auto px-4 relative z-10">
-    <div className="grid md:grid-cols-2 gap-6 items-center text-white">
-      <motion.div
-        initial={{ x: -50, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg">
-          Welcome to Abhishek International School
-        </h1>
-        <p className="text-xl md:text-2xl mb-8 max-w-2xl drop-shadow-md">
-          Nurturing young minds to become future leaders through quality education and holistic development.
-        </p>
-        <div className="flex flex-wrap gap-4">
-          <Button asChild size="lg" className="bg-indigo-600 hover:bg-indigo-700">
-            <Link href="/admission">Apply Now</Link>
-          </Button>
-          <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/20">
-            <Link href="/about">Learn More</Link>
-          </Button>
-        </div>
-      </motion.div>
-
-      <div className="md:ml-auto">
-        <EnquiryForm />
-      </div>
-    </div>
-  </div>
-</section>
-
+      </section>
 
       <WelcomeSection />
 
-      <section className="bg-gray-50 py-16">
-        <div className="container mx-auto px-4">
-          <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-sky-700 sm:text-4xl">Why Choose Us</h2>
-            <div className="mb-6 h-1 w-24 bg-gradient-to-r from-sky-500 to-purple-500 mx-auto"></div>
-            <p className="mx-auto max-w-2xl text-lg text-gray-600">
-              Discover what makes Abhishek International School the preferred choice for parents and students.
-            </p>
-          </div>
+      
+{/* Why Choose Us Section */}
+<section className="py-16 ">
+  <div className="container mx-auto px-4">
+    <div className="mb-12 text-center">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+       
+        <h2 className="mb-4 text-3xl font-bold sm:text-3xl text-gray-800">
+          Why Choose <span className="text-[#8e24aa]">Abhishek International School ?</span>
+        </h2>
+        <div className="mb-6 h-1 w-24 bg-gradient-to-r from-[#6a1b9a] to-[#ab47bc] mx-auto"></div>
+        <p className="mx-auto max-w-2xl text-lg text-gray-600">
+          Discover what makes us the preferred choice for parents who value holistic education and excellence
+        </p>
+      </motion.div>
+    </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <FeatureCard icon={feature.icon} title={feature.title} description={feature.description} />
-              </motion.div>
-            ))}
+    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {features.map((feature, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          viewport={{ once: true }}
+          whileHover={{ y: -10 }}
+          className="relative overflow-hidden bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300"
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-[#f3e5f5] to-[#e1bee7] opacity-10"></div>
+          
+          <div className="p-6 relative z-10">
+            <div className="flex items-start mb-4">
+              <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-[#f3e5f5] text-[#8e24aa] mr-4">
+                <feature.icon className="h-6 w-6" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-800">{feature.title}</h3>
+            </div>
+            
+            <p className="text-gray-600">{feature.description}</p>
+            
+            <div className="mt-6 pt-4 border-t border-gray-100">
+              <div className="flex flex-wrap gap-2">
+                {Array(5).fill(0).map((_, i) => (
+                  <div 
+                    key={i}
+                    className="w-2 h-2 rounded-full bg-[#d1c4e9]"
+                  />
+                ))}
+              </div>
+            </div>
           </div>
+        </motion.div>
+      ))}
+    </div>
+
+    
+    {/* Testimonial */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="mt-16 max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-8 border border-gray-100"
+    >
+      <div className="flex items-center mb-4">
+        <div className="flex-shrink-0 mr-4">
+          <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
         </div>
-      </section>
-
-      <section className="py-16 bg-gradient-to-r from-sky-600 to-purple-600 text-white">
+        <div>
+          <h4 className="font-bold text-gray-800">Rajesh Sharma</h4>
+          <p className="text-sm text-gray-600">Parent of Class 10 Student</p>
+        </div>
+        
+        
+      </div>
+      
+      
+      
+      <div className="relative">
+        <svg className="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-[#e1bee7]" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+        </svg>
+        <p className="text-gray-700 italic pl-8">
+          "The personalized attention my child receives has transformed his confidence and academic performance. The teachers go above and beyond to nurture each student's unique talents."
+        </p>
+      </div>
+    </motion.div>
+  </div>
+</section>
+      {/* CTA Section */}
+      <section className="py-16 bg-gradient-to-r from-[#6a1b9a] via-[#8e24aa] to-[#ab47bc] text-white">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
@@ -173,19 +207,21 @@ export default function Home() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="mb-6 text-3xl font-bold sm:text-4xl">Ready to Join Our School?</h2>
+            <h2 className="mb-6 text-3xl font-bold sm:text-3xl">Ready to Join Our School?</h2>
             <p className="mx-auto mb-8 max-w-2xl text-lg">
               Take the first step towards providing your child with a quality education that focuses on holistic
               development.
             </p>
+            
+          
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button asChild size="lg" variant="secondary">
+                <Button asChild size="lg" className="text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-[#6a1b9a] via-[#8e24aa] to-[#ab47bc]">
                   <Link href="/admission">Apply for Admission</Link>
                 </Button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/20">
+                <Button asChild size="lg" variant="outline" className="border-[#8e24aa] text-[#8e24aa] hover:bg-[#f3e5f5] px-6 py-3 rounded-lg transition-all duration-300">
                   <Link href="/contact">Contact Us</Link>
                 </Button>
               </motion.div>
@@ -194,11 +230,17 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Latest News & Events */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-sky-700 sm:text-4xl">Latest News & Events</h2>
-            <div className="mb-6 h-1 w-24 bg-gradient-to-r from-sky-500 to-purple-500 mx-auto"></div>
+            
+             
+        <h2 className="mb-4 text-3xl font-bold sm:text-3xl text-gray-800">
+          Latest News <span className="text-[#8e24aa]">& Events</span>
+        </h2>
+            
+            <div className="mb-6 h-1 w-24 bg-gradient-to-r from-[#6a1b9a] to-[#ab47bc] mx-auto"></div>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
@@ -211,13 +253,13 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="rounded-lg border border-gray-200 bg-white p-6 shadow-md transition-all duration-300 hover:shadow-lg"
               >
-                <div className="mb-4 text-sm font-medium text-purple-600">April {item + 10}, 2023</div>
+                <div className="mb-4 text-sm font-medium text-[#8e24aa]">April {item + 10}, 2023</div>
                 <h3 className="mb-2 text-xl font-bold text-gray-900">Annual Sports Day Celebration</h3>
                 <p className="mb-4 text-gray-600">
                   Our school celebrated its Annual Sports Day with great enthusiasm. Students participated in various
                   sports activities.
                 </p>
-                <Link href="#" className="text-sky-600 hover:text-sky-800 font-medium">
+                <Link href="#" className="text-[#6a1b9a] hover:text-[#4a148c] font-medium">
                   Read More →
                 </Link>
               </motion.div>
@@ -226,7 +268,7 @@ export default function Home() {
 
           <div className="mt-10 text-center">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button asChild variant="outline" className="border-sky-600 text-sky-600 hover:bg-sky-50">
+              <Button asChild variant="outline" className="border-[#8e24aa] text-[#8e24aa] hover:bg-[#f3e5f5]">
                 <Link href="/extra-curricular/events">View All Events</Link>
               </Button>
             </motion.div>
@@ -236,4 +278,3 @@ export default function Home() {
     </div>
   )
 }
-

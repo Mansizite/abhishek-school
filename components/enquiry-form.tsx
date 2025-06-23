@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -27,7 +26,6 @@ export function EnquiryForm() {
     const timer = setTimeout(() => {
       setIsVisible(true)
     }, 500)
-
     return () => clearTimeout(timer)
   }, [])
 
@@ -68,15 +66,17 @@ export function EnquiryForm() {
       }}
       className="relative z-10"
     >
-      <Card className="shadow-xl border-t-4 border-t-sky-600 bg-white/90 backdrop-blur-sm overflow-hidden">
-        <CardHeader className="bg-gradient-to-r from-sky-600 to-purple-600 text-white rounded-t-lg pb-3">
+      <Card className="shadow-lg border-t-4 border-[#8e24aa] bg-white/90 rounded-lg backdrop-blur-md">
+        <CardHeader className="text-white rounded-t-lg pb-3 font-serif" style={{ backgroundColor: "#8e24aa" }}>
           <CardTitle className="text-xl text-center flex items-center justify-center">
             <BookOpen className="mr-2 h-5 w-5" />
             Admission Enquiry
           </CardTitle>
         </CardHeader>
+
         <CardContent className="p-4">
           <form onSubmit={handleSubmit} className="space-y-3">
+            {/* Name */}
             <div className="space-y-2 relative">
               <div className="absolute left-3 top-2.5 text-gray-500">
                 <User size={16} />
@@ -87,10 +87,11 @@ export function EnquiryForm() {
                 onChange={handleChange}
                 placeholder="Full Name *"
                 required
-                className="bg-white/80 pl-9"
+                className="bg-white/90 pl-9 text-sm text-gray-800 rounded-md focus:ring-2 focus:ring-[#8e24aa]/50"
               />
             </div>
 
+            {/* Email */}
             <div className="space-y-2 relative">
               <div className="absolute left-3 top-2.5 text-gray-500">
                 <Mail size={16} />
@@ -102,10 +103,11 @@ export function EnquiryForm() {
                 onChange={handleChange}
                 placeholder="Email Address *"
                 required
-                className="bg-white/80 pl-9"
+                className="bg-white/90 pl-9 text-sm text-gray-800 rounded-md focus:ring-2 focus:ring-[#8e24aa]/50"
               />
             </div>
 
+            {/* Phone */}
             <div className="space-y-2 relative">
               <div className="absolute left-3 top-2.5 text-gray-500">
                 <Phone size={16} />
@@ -116,34 +118,27 @@ export function EnquiryForm() {
                 onChange={handleChange}
                 placeholder="Phone Number *"
                 required
-                className="bg-white/80 pl-9"
+                className="bg-white/90 pl-9 text-sm text-gray-800 rounded-md focus:ring-2 focus:ring-[#8e24aa]/50"
               />
             </div>
 
+            {/* Class Select */}
             <div className="space-y-2">
               <Select value={formData.class} onValueChange={handleSelectChange}>
-                <SelectTrigger className="bg-white/80">
+                <SelectTrigger className="bg-white/90 text-sm text-gray-800 rounded-md focus:ring-2 focus:ring-[#8e24aa]/50">
                   <SelectValue placeholder="Select Class" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="nursery">Nursery</SelectItem>
-                  <SelectItem value="kg">Kindergarten</SelectItem>
-                  <SelectItem value="1">Class 1</SelectItem>
-                  <SelectItem value="2">Class 2</SelectItem>
-                  <SelectItem value="3">Class 3</SelectItem>
-                  <SelectItem value="4">Class 4</SelectItem>
-                  <SelectItem value="5">Class 5</SelectItem>
-                  <SelectItem value="6">Class 6</SelectItem>
-                  <SelectItem value="7">Class 7</SelectItem>
-                  <SelectItem value="8">Class 8</SelectItem>
-                  <SelectItem value="9">Class 9</SelectItem>
-                  <SelectItem value="10">Class 10</SelectItem>
-                  <SelectItem value="11">Class 11</SelectItem>
-                  <SelectItem value="12">Class 12</SelectItem>
+                  {["Nursery", "Kindergarten", ...Array.from({ length: 12 }, (_, i) => `Class ${i + 1}`)].map((cls, i) => (
+                    <SelectItem key={i} value={cls.toLowerCase().replace(" ", "")}>
+                      {cls}
+                    </SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
             </div>
 
+            {/* Message */}
             <div className="space-y-2">
               <Textarea
                 name="message"
@@ -151,21 +146,23 @@ export function EnquiryForm() {
                 onChange={handleChange}
                 placeholder="Your Message"
                 rows={3}
-                className="bg-white/80"
+                className="bg-white/90 text-sm text-gray-800 rounded-md focus:ring-2 focus:ring-[#8e24aa]/50"
               />
             </div>
 
+            {/* Submit Button */}
             <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
               <Button
                 type="submit"
-                className="w-full bg-gradient-to-r from-sky-600 to-purple-600 hover:from-sky-700 hover:to-purple-700"
+                className="w-full bg-gradient-to-r from-[#6a1b9a] via-[#8e24aa] to-[#ab47bc] text-white hover:from-[#5e1789] hover:to-[#9c1fb4] transition-all duration-300 font-serif rounded-md py-2"
               >
                 Submit Enquiry
               </Button>
             </motion.div>
 
-            <div className="text-center text-sm text-gray-500 mt-2">
-              <span className="text-sky-600 font-semibold">20% OFF</span> on admission fees for early registrations!
+            {/* Offer Note */}
+            <div className="text-center text-sm text-[#8e24aa] mt-2 font-medium font-serif">
+              🎉 <span className="font-bold">20% OFF</span> on admission fees for early registrations!
             </div>
           </form>
         </CardContent>
@@ -173,4 +170,3 @@ export function EnquiryForm() {
     </motion.div>
   )
 }
-

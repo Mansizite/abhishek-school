@@ -28,12 +28,12 @@ export function SubNavHeader({ title, items }: SubNavHeaderProps) {
   }, [pathname, items])
 
   return (
-    <div className="bg-gradient-to-r from-sky-50 to-purple-50 border-b">
+    <div className="bg-gradient-to-r border-b">
       <div className="container mx-auto px-4">
         <div className="py-6">
           <div className="flex flex-col md:flex-row md:items-center justify-between">
             <div className="flex items-center">
-              <h1 className="text-2xl md:text-3xl font-bold text-sky-700">{title}</h1>
+              {/* <h1 className="text-2xl md:text-3xl font-bold text-sky-700">{title}</h1> */}
               <button
                 onClick={() => setIsActive(!isActive)}
                 className="md:hidden ml-2 p-1 rounded-full hover:bg-gray-100"
