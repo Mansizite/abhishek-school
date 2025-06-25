@@ -1,160 +1,36 @@
-// import Image from "next/image"
-// import { Card, CardContent } from "@/components/ui/card"
-// import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-// export default function AboutPage() {
-//   return (
-//     <div className="container mx-auto px-4 py-12 font-serif">
-//       <div className="mb-12 text-center">
-//         <h1 className="mb-4 text-4xl font-bold text-[#6a1b9a] sm:text-3xl">About Us</h1>
-//         <div className="mb-6 h-1 w-24 bg-gradient-to-r from-[#6a1b9a] to-[#ab47bc] mx-auto"></div>
-//         <p className="mx-auto max-w-3xl text-lg text-gray-700">
-//           Learn more about Abhishek International School, our history, vision, and commitment to excellence in education.
-//         </p>
-//       </div>
-
-//       <div className="grid gap-12 md:grid-cols-2 items-center mb-16">
-//         <div>
-//           <h2 className="mb-4 text-2xl font-bold text-[#8e24aa]">Our Story</h2>
-//           <p className="mb-4 text-gray-700">
-//             Founded in 2005, Abhishek International School has grown from a small institution to one of the leading educational establishments in the region.
-//           </p>
-//           <p className="mb-4 text-gray-700">
-//             Our journey has been marked by a steadfast commitment to academic excellence and holistic development of students. Over the years, we have expanded our facilities, enhanced our curriculum, and strengthened our faculty.
-//           </p>
-//           <p className="text-gray-700">
-//             Our alumni excel in various fields—academics, sports, arts, and entrepreneurship—carrying forward the values instilled at Abhishek International School.
-//           </p>
-//         </div>
-//         <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
-//           <Image src="/placeholder.svg?height=400&width=600" alt="School Building" fill className="object-cover" />
-//         </div>
-//       </div>
-
-//       <Tabs defaultValue="vision" className="mb-16">
-//         <TabsList className="grid w-full grid-cols-2 rounded-lg border border-[#ab47bc]">
-//           <TabsTrigger value="vision">Vision & Mission</TabsTrigger>
-//           <TabsTrigger value="values">Core Values</TabsTrigger>
-//         </TabsList>
-//         <TabsContent value="vision" className="mt-6">
-//           <div className="grid gap-8 md:grid-cols-2">
-//             <Card className="border-[#8e24aa]">
-//               <CardContent className="pt-6">
-//                 <h3 className="mb-4 text-xl font-bold text-[#8e24aa]">Our Vision</h3>
-//                 <p className="text-gray-700">
-//                   To be a premier educational institution nurturing global citizens who are intellectually competent, morally upright, and socially responsible.
-//                 </p>
-//               </CardContent>
-//             </Card>
-//             <Card className="border-[#8e24aa]">
-//               <CardContent className="pt-6">
-//                 <h3 className="mb-4 text-xl font-bold text-[#8e24aa]">Our Mission</h3>
-//                 <p className="text-gray-700">
-//                   To provide a learning environment promoting excellence, creativity, integrity, respect, and compassion, enabling students to reach their full potential.
-//                 </p>
-//               </CardContent>
-//             </Card>
-//           </div>
-//         </TabsContent>
-//         <TabsContent value="values" className="mt-6">
-//           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-//             {[
-//               { title: "Excellence", description: "Striving for the highest standards in all endeavors" },
-//               { title: "Integrity", description: "Upholding honesty, ethics, and moral principles" },
-//               { title: "Respect", description: "Valuing diversity and treating everyone with dignity" },
-//               { title: "Innovation", description: "Embracing creativity and forward-thinking approaches" },
-//               { title: "Responsibility", description: "Taking ownership of actions and their consequences" },
-//               { title: "Collaboration", description: "Working together to achieve common goals" },
-//               { title: "Compassion", description: "Showing empathy and kindness towards others" },
-//               { title: "Perseverance", description: "Demonstrating determination in the face of challenges" },
-//             ].map((value, index) => (
-//               <Card key={index} className="border-[#ab47bc]">
-//                 <CardContent className="pt-6">
-//                   <h3 className="mb-2 text-lg font-bold text-[#6a1b9a]">{value.title}</h3>
-//                   <p className="text-gray-700">{value.description}</p>
-//                 </CardContent>
-//               </Card>
-//             ))}
-//           </div>
-//         </TabsContent>
-//       </Tabs>
-
-//       <div className="mb-16">
-//         <h2 className="mb-6 text-2xl font-bold text-center text-[#6a1b9a]">Our Leadership Team</h2>
-//         <div className="grid gap-8 md:grid-cols-3">
-//           {[
-//             { name: "Dr. Rajesh Kumar", position: "Chairman", image: "/placeholder.svg?height=300&width=300" },
-//             { name: "Mrs. Sunita Sharma", position: "Principal", image: "/placeholder.svg?height=300&width=300" },
-//             { name: "Mr. Vikram Singh", position: "Vice Principal", image: "/placeholder.svg?height=300&width=300" },
-//           ].map((leader, index) => (
-//             <div key={index} className="text-center">
-//               <div className="mb-4 mx-auto relative h-[200px] w-[200px] overflow-hidden rounded-full border-4 border-[#8e24aa]">
-//                 <Image src={leader.image} alt={leader.name} fill className="object-cover" />
-//               </div>
-//               <h3 className="mb-1 text-xl font-bold text-[#6a1b9a]">{leader.name}</h3>
-//               <p className="text-gray-700">{leader.position}</p>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-
-//       <div className="bg-[#f9f6fb] p-8 rounded-lg">
-//         <h2 className="mb-6 text-2xl font-bold text-center text-[#6a1b9a]">Achievements & Milestones</h2>
-//         <div className="space-y-4">
-//           {[
-//             { year: "2005", achievement: "Establishment of Abhishek International School" },
-//             { year: "2008", achievement: "Received accreditation from the International Education Board" },
-//             { year: "2012", achievement: "Expansion of campus with state-of-the-art facilities" },
-//             { year: "2015", achievement: "Celebrated 10 years of academic excellence" },
-//             { year: "2018", achievement: "Recognized as one of the top 50 schools in the region" },
-//             { year: "2020", achievement: "Launched innovative STEM program" },
-//             { year: "2022", achievement: "Opened new sports complex and performing arts center" },
-//           ].map((item, index) => (
-//             <div key={index} className="flex">
-//               <div className="mr-4 w-20 shrink-0 text-right font-bold text-[#ab47bc]">{item.year}</div>
-//               <div className="grow border-l-2 border-[#6a1b9a] pl-4 pb-4">{item.achievement}</div>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   )
-// }
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#f9f6fb] to-white font-serif">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
-        {/* <div className="absolute inset-0 bg-gradient-to-r from-[#6a1b9a]/90 to-[#ab47bc]/90 z-0"></div> */}
+        <div className="absolute  z-0"></div>
+        <div className="container mx-auto px-4 py-32 relative z-10 text-center">
+          <h2 className="mb-4 text-3xl font-bold sm:text-4xl text-gray-800">
+            About <span className="text-[#8e24aa]">Abhishek International</span>
+          </h2>
+          <div className="mb-8 h-1 w-24 bg-gradient-to-r from-[#6a1b9a] to-[#ab47bc] mx-auto rounded-full"></div>
         
-         
-            {/* <h1 className="mb-6 text-4xl md:text-5xl font-bold text-purple tracking-tight">
-              About Abhishek International School
-            </h1> */}
-              <h2 className="mb-4 text-3xl font-bold sm:text-3xl text-gray-800 text-center " style={{marginTop:"70px"}}>
-          About <span className="text-[#8e24aa]">Abhishek International School </span>
-        </h2>
-            <div className="mb-8 h-1 w-24 bg-gradient-to-r from-white to-[#e0d4e8] mx-auto rounded-full"></div>
-          
-          
-        
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent z-10"></div>
       </div>
 
       {/* Story Section */}
-      <div className="container mx-auto px-4 py-16 -mt-16 relative z-20" style={{marginTop:"0px"}}>
+      <div className="container mx-auto px-4 py-16 -mt-16 relative z-20">
         <div className="bg-white rounded-xl shadow-2xl p-6 md:p-10">
           <div className="grid gap-12 md:grid-cols-2 items-center">
             <div className="relative h-[400px] rounded-xl overflow-hidden shadow-lg transform transition duration-500 hover:shadow-xl">
               <div className="absolute inset-0 bg-gradient-to-t from-[#6a1b9a]/50 to-transparent z-10"></div>
               <Image 
-                src="/placeholder.svg?height=400&width=600" 
-                alt="School Building" 
+                src="/about/school-building.jpg" 
+                alt="Abhishek International School Campus" 
                 fill 
                 className="object-cover transition duration-700 hover:scale-105" 
+                priority
               />
             </div>
             <div className="py-4">
@@ -166,13 +42,13 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-5 text-gray-700">
                 <p className="leading-relaxed">
-                  Founded in 2005, Abhishek International School has grown from a small institution to one of the leading educational establishments in the region.
+                  Abhishek International School is run by the trust - 'Abhishek Vidyalam's. The pioneers of this trust - Chairman - Mr Gururaj Charantimath, Vice Chairman - Mr. Suresh Kasbe, Director - Mrs. Geeta Charantimath, Secretary - Mrs. Manisha Kasbe - have been in the educational field for the last 10 years.
                 </p>
                 <p className="leading-relaxed">
-                  Our journey has been marked by a steadfast commitment to academic excellence and holistic development of students. Over the years, we have expanded our facilities, enhanced our curriculum, and strengthened our faculty.
+                  Our extensive one-acre campus in Moshi provides a serene, pollution-free environment ideal for systematic learning. The academic year 2015-16 marked our first year in this beautiful campus with permission from the Maharashtra Government to run up to Secondary section.
                 </p>
                 <p className="leading-relaxed">
-                  Our alumni excel in various fields—academics, sports, arts, and entrepreneurship—carrying forward the values instilled at Abhishek International School.
+                  We currently have classes from Nursery to STD X, with plans to grow organically by adding one standard each year. This approach allows us to focus on nurturing each student's unique strengths while transforming weaknesses into opportunities for growth.
                 </p>
               </div>
             </div>
@@ -180,100 +56,48 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Vision & Mission Section */}
+      {/* Methodology Section */}
       <div className="container mx-auto px-4 py-16">
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="mb-4 text-3xl font-bold text-[#6a1b9a]">
-            Guiding Principles
-          </h2>
-          <div className="mb-6 h-1 w-24 bg-gradient-to-r from-[#6a1b9a] to-[#ab47bc] mx-auto rounded-full"></div>
-          <p className="text-gray-700 max-w-2xl mx-auto">
-            Our vision and mission shape every aspect of our educational approach
-          </p>
-        </div>
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {[
+            {
+              title: "OUR METHODOLOGY",
+              image: "http://www.abhishekinternationalschool.com/assets/img/p1.jpg",
+              desc: "Abhishek International School combines preferred practices in Primary and Secondary school education with the fastest growing methods of the world-renowned Activity based Education System. We recognize the uniqueness of every child and develop it further. Our Activity based Education System facilitates opportunities for social, emotional, intellectual and physical growth of the child. The age-appropriate learning environment enables children to reach their fullest-potential."
+            },
+            {
+              title: "EXTRA CURRICULAR ACTIVITIES",
+              image: "http://www.abhishekinternationalschool.com/assets/img/Activities.jpg",
+              desc: "The aim at Abhishek International School is to provide our students with the opportunity to develop life skills which include self- awareness and teamwork. Children are provided with teaching aids, Worksheets and Booklets that give a complete hands-on experience to them as these years are the most crucial years that act as a foundation for their future development. Hence, it is imperative to include a blended curriculum that is theme based and concept based providing our scholars the holistic approach to learning and development. Our main focus areas of development are Personal, Social and Emotional Development, Communication, Mathematical and Logical Development, Environmental Awareness, Fine and Gross Motor skill Development and Creative Development."
+            },
+            {
+              title: "OLDAGE VISIT",
+              image: "http://www.abhishekinternationalschool.com/assets/img/oldage.jpg",
+              desc: "Abhishek International School visited Orphanage on 17th November 2022 Thursday at SNEHWAN EK AASHECHA KIRAN in Mahalungae, Alandi. In presence of our Hon. & Respected Mrs.Geeta Charantimath Madam ,Mrs. Manisha Kasbe Madam, Rutuja Kasbe Madam, Principal Mrs. Ramamani Iyengar Madam, Co-ordinators Mrs. Kavita Sharma& Mrs.Jagruti Satpute, Teachers, Non Teaching Staff and students of our school. Our school had organized donation of some Food, Toys, Sarees, Dress ,Kids clothes, Shoes to the Orphanage. All our Teachers, Parents, Students were happy to participate and they collected items for donation. Our Principal Mrs. Ramamani Iyengar madam,teacher Mrs. Anita Naidu Miss, our class girls and boys from std 8th& 9th visited SNEHWAN EK AASHECHA KIRAN."
+            }
+          ].map((item, index) => (
+            <Card key={index} className="border-0 shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 group">
+              <div className="h-[250px] relative overflow-hidden">
+                <Image 
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover transition-transform duration-500 "
+                  quality={90}
+                />
 
-        <Tabs defaultValue="vision" className="max-w-5xl mx-auto">
-          <TabsList className="grid w-full grid-cols-2 rounded-xl overflow-hidden shadow-md">
-            <TabsTrigger 
-              value="vision" 
-              className="data-[state=active]:bg-[#6a1b9a] data-[state=active]:text-white py-5 transition-all"
-            >
-              Vision & Mission
-            </TabsTrigger>
-            <TabsTrigger 
-              value="values" 
-              className="data-[state=active]:bg-[#6a1b9a] data-[state=active]:text-white py-5 transition-all"
-            >
-              Core Values
-            </TabsTrigger>
-          </TabsList>
-          
-          <TabsContent value="vision" className="mt-10">
-            <div className="grid gap-8 md:grid-cols-2">
-              <Card className="border-0 shadow-xl overflow-hidden transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1">
-                <div className="h-2 bg-gradient-to-r from-[#8e24aa] to-[#ab47bc]"></div>
-                <CardContent className="pt-8 pb-10">
-                  <div className="flex justify-center mb-6">
-                    <div className="w-12 h-12 rounded-full bg-[#f3e5f5] flex items-center justify-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#8e24aa]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                      </svg>
-                    </div>
-                  </div>
-                  <h3 className="mb-4 text-xl font-bold text-center text-[#8e24aa]">Our Vision</h3>
-                  <p className="text-gray-700 text-center">
-                    To be a premier educational institution nurturing global citizens who are intellectually competent, morally upright, and socially responsible.
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="border-0 shadow-xl overflow-hidden transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1">
-                <div className="h-2 bg-gradient-to-r from-[#8e24aa] to-[#ab47bc]"></div>
-                <CardContent className="pt-8 pb-10">
-                  <div className="flex justify-center mb-6">
-                    <div className="w-12 h-12 rounded-full bg-[#f3e5f5] flex items-center justify-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#8e24aa]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                      </svg>
-                    </div>
-                  </div>
-                  <h3 className="mb-4 text-xl font-bold text-center text-[#8e24aa]">Our Mission</h3>
-                  <p className="text-gray-700 text-center">
-                    To provide a learning environment promoting excellence, creativity, integrity, respect, and compassion, enabling students to reach their full potential.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </TabsContent>
-          
-          <TabsContent value="values" className="mt-10">
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                { title: "Excellence", description: "Striving for the highest standards in all endeavors" },
-                { title: "Integrity", description: "Upholding honesty, ethics, and moral principles" },
-                { title: "Respect", description: "Valuing diversity and treating everyone with dignity" },
-                { title: "Innovation", description: "Embracing creativity and forward-thinking approaches" },
-                { title: "Responsibility", description: "Taking ownership of actions and their consequences" },
-                { title: "Collaboration", description: "Working together to achieve common goals" },
-                { title: "Compassion", description: "Showing empathy and kindness towards others" },
-                { title: "Perseverance", description: "Demonstrating determination in the face of challenges" },
-              ].map((value, index) => (
-                <Card 
-                  key={index} 
-                  className="border-0 shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-xl hover:-translate-y-1"
-                >
-                  <div className="h-1 bg-gradient-to-r from-[#ab47bc] to-[#e1bee7]"></div>
-                  <CardContent className="pt-6 pb-8">
-                    <h3 className="mb-3 text-lg font-bold text-center text-[#6a1b9a]">{value.title}</h3>
-                    <p className="text-gray-700 text-center text-sm">{value.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </TabsContent>
-        </Tabs>
+              </div>
+              <CardContent className="pt-6 pb-8 px-6">
+                <h3 className="text-xl font-semibold text-[#6a1b9a] mb-4">{item.title}</h3>
+                <p className="text-gray-700">{item.desc}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </div>
 
+      {/* Vision & Mission Section */}
+      {/* 
       {/* Leadership Team */}
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto text-center mb-16">
@@ -288,26 +112,43 @@ export default function AboutPage() {
 
         <div className="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto">
           {[
-            { name: "Dr. Rajesh Kumar", position: "Chairman", image: "/placeholder.svg?height=300&width=300" },
-            { name: "Mrs. Sunita Sharma", position: "Principal", image: "/placeholder.svg?height=300&width=300" },
-            { name: "Mr. Vikram Singh", position: "Vice Principal", image: "/placeholder.svg?height=300&width=300" },
+            { 
+              name: "Mr. Gururaj Charantimath", 
+              position: "Chairman", 
+              image: "/about/chairman.jpg",
+              bio: "With over 15 years in education, our chairman provides visionary leadership and strategic direction."
+            },
+            { 
+              name: "Mrs. Geeta Charantimath", 
+              position: "Director", 
+              image: "/about/director.jpg",
+              bio: "Our director oversees academic excellence and ensures our curriculum meets international standards."
+            },
+            { 
+              name: "Mrs. Manisha Kasbe", 
+              position: "Secretary", 
+              image: "/about/secretary.jpg",
+              bio: "As secretary, she manages administrative operations and community relations with exceptional skill."
+            },
           ].map((leader, index) => (
             <div 
               key={index} 
-              className="text-center bg-white rounded-xl shadow-lg p-6 transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl"
+              className="text-center bg-white rounded-xl shadow-lg p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group"
             >
+              {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#6a1b9a]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white z-10">
+                <p className="text-sm">{leader.bio}</p>
+              </div> */}
               <div className="mb-6 mx-auto relative h-[200px] w-[200px] overflow-hidden rounded-full border-4 border-white shadow-lg">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#6a1b9a]/30 z-10 rounded-full"></div>
                 <Image 
                   src={leader.image} 
                   alt={leader.name} 
                   fill 
-                  className="object-cover rounded-full" 
+                  className="object-cover rounded-full transition-transform duration-500 group-hover:scale-110" 
                 />
               </div>
-              <h3 className="mb-2 text-xl font-bold text-gray-800">{leader.name}</h3>
-              <p className="text-[#8e24aa] font-medium mb-4">{leader.position}</p>
-              <div className="flex justify-center space-x-4">
+              <h3 className="mb-2 text-xl font-bold text-gray-800 group-hover:text-dark relative z-20">{leader.name}</h3>
+              <p className="text-[#8e24aa] font-medium mb-4 group-hover:text-dark relative z-20">{leader.position}</p>
+              <div className="flex justify-center space-x-4 relative z-20">
                 <button className="w-8 h-8 rounded-full bg-[#f3e5f5] flex items-center justify-center hover:bg-[#e1bee7] transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-[#6a1b9a]" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/>
@@ -325,57 +166,136 @@ export default function AboutPage() {
       </div>
 
       {/* Timeline Section */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="mb-4 text-3xl font-bold text-[#6a1b9a]">
-            Our Journey Through Time
-          </h2>
-          <div className="mb-6 h-1 w-24 bg-gradient-to-r from-[#6a1b9a] to-[#ab47bc] mx-auto rounded-full"></div>
-          <p className="text-gray-700 max-w-2xl mx-auto">
-            Significant milestones in our educational journey
-          </p>
-        </div>
+      <div className="bg-[#f9f6fb] py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <h2 className="mb-4 text-3xl font-bold text-[#6a1b9a]">
+              Our Journey Through Time
+            </h2>
+            <div className="mb-6 h-1 w-24 bg-gradient-to-r from-[#6a1b9a] to-[#ab47bc] mx-auto rounded-full"></div>
+            <p className="text-gray-700 max-w-2xl mx-auto">
+              Significant milestones in our educational journey
+            </p>
+          </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="relative">
-            {/* Vertical line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-[#6a1b9a] to-[#ab47bc]"></div>
-            
-            {/* Timeline items */}
-            <div className="space-y-12">
-              {[
-                { year: "2005", achievement: "Establishment of Abhishek International School" },
-                { year: "2008", achievement: "Received accreditation from the International Education Board" },
-                { year: "2012", achievement: "Expansion of campus with state-of-the-art facilities" },
-                { year: "2015", achievement: "Celebrated 10 years of academic excellence" },
-                { year: "2018", achievement: "Recognized as one of the top 50 schools in the region" },
-                { year: "2020", achievement: "Launched innovative STEM program" },
-                { year: "2022", achievement: "Opened new sports complex and performing arts center" },
-              ].map((item, index) => (
-                <div 
-                  key={index} 
-                  className={`relative flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center`}
-                >
-                  <div className={`w-1/2 px-4 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
-                    <div className="inline-block bg-white p-6 rounded-xl shadow-lg">
-                      <div className="text-xl font-bold text-[#8e24aa] mb-2">{item.year}</div>
-                      <p className="text-gray-700">{item.achievement}</p>
+          <div className="max-w-4xl mx-auto">
+            <div className="relative">
+              {/* Vertical line */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-[#6a1b9a] to-[#ab47bc]"></div>
+              
+              {/* Timeline items */}
+              <div className="space-y-12">
+                {[
+                  { 
+                    year: "2005", 
+                    achievement: "Establishment of Abhishek International School",
+                    icon: "M13 10V3L4 14h7v7l9-11h-7z" 
+                  },
+                  { 
+                    year: "2010", 
+                    achievement: "Received accreditation from the International Education Board",
+                    icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" 
+                  },
+                  { 
+                    year: "2015", 
+                    achievement: "Expansion of campus with state-of-the-art facilities in Moshi",
+                    icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" 
+                  },
+                  { 
+                    year: "2018", 
+                    achievement: "Celebrated 10 years of academic excellence",
+                    icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" 
+                  },
+                  { 
+                    year: "2020", 
+                    achievement: "Recognized as one of the top schools in the region",
+                    icon: "M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" 
+                  },
+                  { 
+                    year: "2022", 
+                    achievement: "Launched innovative STEM program and digital classrooms",
+                    icon: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" 
+                  },
+                  { 
+                    year: "2023", 
+                    achievement: "Opened new sports complex and performing arts center",
+                    icon: "M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" 
+                  },
+                ].map((item, index) => (
+                  <div 
+                    key={index} 
+                    className={`relative flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center`}
+                  >
+                    <div className={`w-1/2 px-4 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
+                      <div className="inline-block bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div className="flex items-center mb-2">
+                          <div className="w-10 h-10 rounded-full bg-[#f3e5f5] flex items-center justify-center mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#6a1b9a]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
+                            </svg>
+                          </div>
+                          <div className="text-xl font-bold text-[#8e24aa]">{item.year}</div>
+                        </div>
+                        <p className="text-gray-700 text-left">{item.achievement}</p>
+                      </div>
                     </div>
+                    <div className="absolute left-1/2 transform -translate-x-1/2">
+                      <div className="w-6 h-6 rounded-full bg-[#6a1b9a] border-4 border-white shadow-lg"></div>
+                    </div>
+                    <div className="w-1/2 px-4"></div>
                   </div>
-                  <div className="absolute left-1/2 transform -translate-x-1/2">
-                    <div className="w-6 h-6 rounded-full bg-[#6a1b9a] border-4 border-white shadow-lg"></div>
-                  </div>
-                  <div className="w-1/2 px-4"></div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* CTA Section */}
-      
-      
-    </div>
+      {/* Testimonials Section */}
+      <div className="container mx-auto px-4 py-16">
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <h2 className="mb-4 text-3xl font-bold text-[#6a1b9a]">
+            What Parents Say
+          </h2>
+          <div className="mb-6 h-1 w-24 bg-gradient-to-r from-[#6a1b9a] to-[#ab47bc] mx-auto rounded-full"></div>
+          <p className="text-gray-700 max-w-2xl mx-auto">
+            Hear from our school community about their experiences
+          </p>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">
+          {[
+            {
+              quote: "Abhishek International has provided my child with an exceptional learning environment that balances academics and character development perfectly.",
+              author: "Mrs. Sharma",
+              role: "Parent of Grade 5 student"
+            },
+            {
+              quote: "The teachers' dedication and the school's innovative curriculum have helped my daughter develop confidence and a love for learning.",
+              author: "Mr. Patel",
+              role: "Parent of Grade 8 student"
+            }
+          ].map((testimonial, index) => (
+            <Card key={index} className="border-0 shadow-lg overflow-hidden bg-white">
+              <CardContent className="p-8">
+                <div className="mb-6 text-[#6a1b9a]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                  </svg>
+                </div>
+                <p className="text-gray-700 italic mb-6">{testimonial.quote}</p>
+                <div>
+                  <p className="font-bold text-[#6a1b9a]">{testimonial.author}</p>
+                  <p className="text-sm text-gray-600">{testimonial.role}</p>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+
+     
+      </div>
+    
   );
 }

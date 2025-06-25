@@ -71,15 +71,20 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <MapPin className="mr-2 h-5 w-5 shrink-0" />
-                <span>123 Education Street, Knowledge City, State - 123456</span>
+                <span>Abhishek International School
+Plot No.2, Sector No.6,
+Moshi Pradhikaran, PCNTDA,
+Pune</span>
               </li>
               <li className="flex items-center">
                 <Phone className="mr-2 h-5 w-5" />
-                <span>+91 98765 43210</span>
+                <span>+91 84467 13030</span>
               </li>
               <li className="flex items-center">
                 <Mail className="mr-2 h-5 w-5" />
-                <span>info@abhishekinternational.edu</span>
+                <span>abhishekinternational.cbse@gmail
+
+</span>
               </li>
             </ul>
           </div>

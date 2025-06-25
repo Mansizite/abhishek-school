@@ -10,6 +10,7 @@ import { EnquiryForm } from "@/components/enquiry-form"
 import { SocialSidebar } from "@/components/social-sidebar"
 import { Chatbot } from "@/components/chatbot"
 import { motion } from "framer-motion"
+import { Card, CardContent } from "@/components/ui/card";
 
 const features = [
   {
@@ -165,37 +166,52 @@ export default function Home() {
     </div>
 
     
-    {/* Testimonial */}
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-      className="mt-16 max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-8 border border-gray-100"
-    >
-      <div className="flex items-center mb-4">
-        <div className="flex-shrink-0 mr-4">
-          <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+  <div className="container mx-auto px-4 py-16">
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <h2 className="mb-4 text-3xl font-bold text-[#6a1b9a]">
+            What Parents Say
+          </h2>
+          <div className="mb-6 h-1 w-24 bg-gradient-to-r from-[#6a1b9a] to-[#ab47bc] mx-auto rounded-full"></div>
+          <p className="text-gray-700 max-w-2xl mx-auto">
+            Hear from our school community about their experiences
+          </p>
         </div>
-        <div>
-          <h4 className="font-bold text-gray-800">Rajesh Sharma</h4>
-          <p className="text-sm text-gray-600">Parent of Class 10 Student</p>
+
+        <div className="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">
+          {[
+            {
+              quote: "Abhishek International has provided my child with an exceptional learning environment that balances academics and character development perfectly.",
+              author: "Mrs. Sharma",
+              role: "Parent of Grade 5 student"
+            },
+            {
+              quote: "The teachers' dedication and the school's innovative curriculum have helped my daughter develop confidence and a love for learning.",
+              author: "Mr. Patel",
+              role: "Parent of Grade 8 student"
+            }
+          ].map((testimonial, index) => (
+            <Card key={index} className="border-0 shadow-lg overflow-hidden bg-white">
+              <CardContent className="p-8">
+                <div className="mb-6 text-[#6a1b9a]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                  </svg>
+                </div>
+                <p className="text-gray-700 italic mb-6">{testimonial.quote}</p>
+                <div>
+                  <p className="font-bold text-[#6a1b9a]">{testimonial.author}</p>
+                  <p className="text-sm text-gray-600">{testimonial.role}</p>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
-        
-        
       </div>
+
       
       
       
-      <div className="relative">
-        <svg className="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-[#e1bee7]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-        </svg>
-        <p className="text-gray-700 italic pl-8">
-          "The personalized attention my child receives has transformed his confidence and academic performance. The teachers go above and beyond to nurture each student's unique talents."
-        </p>
-      </div>
-    </motion.div>
+     
   </div>
 </section>
       {/* CTA Section */}
