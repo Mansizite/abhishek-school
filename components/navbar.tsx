@@ -283,42 +283,37 @@ const navItems = [
     title: "Extra Curricular Activities",
     href: "/extra-curricular",
     subItems: [
-      { title: "Sports", href: "/extra-curricular/sports" },
-      { title: "Arts & Culture", href: "/extra-curricular/arts" },
-      { title: "Clubs", href: "/extra-curricular/clubs" },
-      { title: "Events", href: "/extra-curricular/events" },
+      { title: "Our Achievement", href: "/extra-curricular/our-achievement" },
+      { title: "Extra Activity", href: "/extra-curricular/extra-activity" },
+      // { title: "Clubs", href: "/extra-curricular/clubs" },
+      // { title: "Events", href: "/extra-curricular/events" },
     ],
   },
   {
     title: "Admission",
     href: "/admission",
     subItems: [
-      { title: "Admission Process", href: "/admission/process" },
-      { title: "Fee Structure", href: "/admission/fees" },
-      { title: "Apply Online", href: "/admission/apply" },
-      { title: "FAQs", href: "/admission/faqs" },
+      { title: "Elligibility & intake", href: "/admission/elligibilty-intake" },
+      { title: "Fee Structure", href: "/admission/fees-structure" },
+    
+      { title: "Admission Form", href: "/admission/admission-form" },
     ],
   },
   {
     title: "Academics",
     href: "/academics",
     subItems: [
-      { title: "Curriculum", href: "/academics/curriculum" },
-      { title: "Faculty", href: "/academics/faculty" },
-      { title: "Examination", href: "/academics/examination" },
-      { title: "Results", href: "/academics/results" },
+      { title: "Acadmic Planner", href: "/academics/academic-planner" },
+      { title: "Programs", href: "/academics/programs" },
+      { title: "Teaching Methodology", href: "/academics/teaching-methodology" },
+      { title: "Activity", href: "/academics/activity" },
     ],
   },
   {
     title: "Facilities",
     href: "/facilities",
-    subItems: [
-      { title: "Library", href: "/facilities/library" },
-      { title: "Labs", href: "/facilities/labs" },
-      { title: "Sports Complex", href: "/facilities/sports" },
-      { title: "Transport", href: "/facilities/transport" },
-      { title: "Cafeteria", href: "/facilities/cafeteria" },
-    ],
+     subItems: [],
+ 
   },
   {
     title: "Gallery",

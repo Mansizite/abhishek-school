@@ -1,202 +1,94 @@
-"use client"
+"use client";
 
-import type React from "react"
-
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Card, CardContent } from "@/components/ui/card"
-import { Mail, Phone, MapPin, Clock } from "lucide-react"
-import { useToast } from "@/hooks/use-toast"
+import React from 'react';
+import { Mail, Phone, MapPin, Facebook, Youtube } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function ContactPage() {
-  const { toast } = useToast()
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: "",
-  })
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Form submitted:", formData)
-    toast({
-      title: "Message Sent",
-      description: "Thank you for contacting us. We will get back to you soon.",
-    })
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
-    })
-  }
-
   return (
-    <div className="container mx-auto px-4 py-12">
-      <div className="mb-12 text-center">
-        <h1 className="mb-4 text-3xl font-bold text-sky-700 sm:text-4xl md:text-5xl">Contact Us</h1>
-        <div className="mb-6 h-1 w-24 bg-gradient-to-r from-sky-500 to-purple-500 mx-auto"></div>
-        <p className="mx-auto max-w-3xl text-lg text-gray-600">
-          We'd love to hear from you. Please fill out the form below or use our contact information to get in touch with
-          us.
-        </p>
-      </div>
+    <div className="bg-gradient-to-b from-purple-50 to-white font-serif min-h-screen py-12 px-4">
+      <div className="max-w-6xl mx-auto text-center">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-4xl md:text-5xl font-bold text-[#6a1b9a] mb-6"
+        >
+          Contact Us
+        </motion.h1>
+        <div className="w-24 h-1.5 bg-gradient-to-r from-[#6a1b9a] to-[#ab47bc] rounded-full mx-auto mb-12"></div>
 
-      <div className="grid gap-10 lg:grid-cols-3">
-        <div className="lg:col-span-2">
-          <Card>
-            <CardContent className="p-6">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid gap-6 md:grid-cols-2">
-                  <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-medium">
-                      Full Name
-                    </label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="John Doe"
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-medium">
-                      Email Address
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="john@example.com"
-                      required
-                    />
-                  </div>
-                </div>
+        <div className="grid md:grid-cols-2 gap-12 text-left">
+          {/* Contact Info */}
+          <div className="space-y-6">
+            <div className="flex items-start gap-4">
+              <MapPin className="text-purple-600 w-6 h-6 mt-1" />
+              <p>
+                <strong>Abhishek International School</strong><br />
+                Plot No.2, Sector No.6,<br />
+                Moshi Pradhikaran, PCNTDA, Pune,<br />
+                Maharashtra 412105
+              </p>
+            </div>
+            <div className="flex items-start gap-4">
+              <Mail className="text-purple-600 w-6 h-6 mt-1" />
+              <p>abhishekinternational.cbse@gmail.com</p>
+            </div>
+            <div className="flex items-start gap-4">
+              <Phone className="text-purple-600 w-6 h-6 mt-1" />
+              <p>Call: 8446713030<br />Whatsapp: 8446713030</p>
+            </div>
 
-                <div className="grid gap-6 md:grid-cols-2">
-                  <div className="space-y-2">
-                    <label htmlFor="phone" className="text-sm font-medium">
-                      Phone Number
-                    </label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="+91 98765 43210"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="subject" className="text-sm font-medium">
-                      Subject
-                    </label>
-                    <Input
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      placeholder="Admission Inquiry"
-                      required
-                    />
-                  </div>
-                </div>
+            {/* Social Icons */}
+            <div className="flex gap-6 mt-4">
+              <a href="#" className="text-purple-600 hover:text-purple-800">
+                <Facebook className="w-6 h-6" />
+              </a>
+              <a href="#" className="text-purple-600 hover:text-purple-800">
+                <Youtube className="w-6 h-6" />
+              </a>
+            </div>
 
-                <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium">
-                    Message
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Your message here..."
-                    rows={6}
-                    required
-                  />
-                </div>
+            {/* Google Map */}
+            <div className="mt-6">
+              <iframe
+                title="Google Map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.6204447106055!2d73.84989167504526!3d18.635353867440224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c7a93b83f15b%3A0x61f8e0892a4d681f!2sAbhishek%20International%20School!5e0!3m2!1sen!2sin!4v1719810000000!5m2!1sen!2sin"
+                width="100%"
+                height="300"
+                allowFullScreen
+                loading="lazy"
+                className="rounded-xl shadow-lg border"
+              ></iframe>
+            </div>
+          </div>
 
-                <Button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-sky-600 to-purple-600 hover:from-sky-700 hover:to-purple-700"
-                >
-                  Send Message
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
-        </div>
-
-        <div>
-          <Card>
-            <CardContent className="p-6">
-              <h2 className="mb-6 text-xl font-bold text-sky-700">Contact Information</h2>
-
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <MapPin className="mr-3 h-5 w-5 text-sky-600 shrink-0 mt-0.5" />
-                  <div>
-                    <h3 className="font-medium">Address</h3>
-                    <p className="text-gray-600">123 Education Street, Knowledge City, State - 123456</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <Phone className="mr-3 h-5 w-5 text-sky-600 shrink-0 mt-0.5" />
-                  <div>
-                    <h3 className="font-medium">Phone</h3>
-                    <p className="text-gray-600">+91 98765 43210</p>
-                    <p className="text-gray-600">+91 12345 67890</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <Mail className="mr-3 h-5 w-5 text-sky-600 shrink-0 mt-0.5" />
-                  <div>
-                    <h3 className="font-medium">Email</h3>
-                    <p className="text-gray-600">info@abhishekinternational.edu</p>
-                    <p className="text-gray-600">admissions@abhishekinternational.edu</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <Clock className="mr-3 h-5 w-5 text-sky-600 shrink-0 mt-0.5" />
-                  <div>
-                    <h3 className="font-medium">Office Hours</h3>
-                    <p className="text-gray-600">Monday - Friday: 8:00 AM - 4:00 PM</p>
-                    <p className="text-gray-600">Saturday: 9:00 AM - 12:00 PM</p>
-                    <p className="text-gray-600">Sunday: Closed</p>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="mt-6">
-            <CardContent className="p-6">
-              <h2 className="mb-4 text-xl font-bold text-sky-700">Find Us On Map</h2>
-              <div className="aspect-video bg-gray-200 rounded-md flex items-center justify-center">
-                <p className="text-gray-500">Map will be displayed here</p>
-              </div>
-            </CardContent>
-          </Card>
+          {/* Contact Form */}
+          <form className="bg-white p-8 rounded-xl shadow-xl border space-y-6">
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                Your Name
+              </label>
+              <input type="text" id="name" className="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:ring-purple-500 focus:border-purple-500" />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                Your Email
+              </label>
+              <input type="email" id="email" className="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:ring-purple-500 focus:border-purple-500" />
+            </div>
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+                Message
+              </label>
+              <textarea id="message" rows={5} className="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:ring-purple-500 focus:border-purple-500"></textarea>
+            </div>
+            <button type="submit" className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg shadow">
+              Send Message
+            </button>
+          </form>
         </div>
       </div>
     </div>
-  )
+  );
 }
-
